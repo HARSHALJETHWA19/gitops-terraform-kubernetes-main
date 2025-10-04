@@ -1,0 +1,13 @@
+apiVersion: terraform.core.oam.dev/v1beta1
+kind: Terraform
+metadata:
+  name: example
+  namespace: terraform
+spec:
+  tf:
+    backend:
+      type: local
+      config:
+        path: "/workspace/example.tfstate"
+    module:
+      source: ./terraform-modules/example
